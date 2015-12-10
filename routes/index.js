@@ -41,4 +41,19 @@ router.post('/generic-form', function (req, res) {
     });
 });
 
+// To work with JSONP on the other server:
+
+/*router.get('/index.js', function (req, res) {
+
+    // res.jsonp({name: 'Manali'});
+
+    var fn_name = req.query.callback;
+    var obj = {
+        name: 'Manali'
+    };
+    res.status(200).send( fn_name + '(' +
+        JSON.stringify(obj) +
+        ');');
+});*/
+
 module.exports = router;
